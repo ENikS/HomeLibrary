@@ -1,12 +1,12 @@
-(* *****************************************************************************
+п»ї(* *****************************************************************************
   *
   * MyHomeLib
   *
-  * Copyright (C) 2008-2010 Aleksey Penkov
+  * Copyright (C) 2008-2019 Oleksiy Penkov (aka Koreec)
   *
   * Author(s)           Nick Rymanov (nrymanov@gmail.com)
   * Created             15.04.2010
-  * Description         LinkLabel с исправленной поддержкой Themes
+  * Description         LinkLabel СЃ РёСЃРїСЂР°РІР»РµРЅРЅРѕР№ РїРѕРґРґРµСЂР¶РєРѕР№ Themes
   *
   * $Id$
   *
