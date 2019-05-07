@@ -9,7 +9,7 @@
   * Created             20.08.2008
   * Description
   *
-  * $Id$
+  * $Id: frm_main.pas 1183 2015-04-01 04:32:39Z koreec $
   *
   * History
   * NickR 06.05.2010    Для уменьшения размера dfm и единообразия интерфейса некоторые компоненты
@@ -48,7 +48,6 @@ uses
   pngimage,
   jpeg,
   DB,
-  DBTables,
   unit_DownloadManagerThread,
   unit_Messages,
   files_list,
@@ -74,7 +73,7 @@ uses
   unit_treeController,
   unit_ColorTabs,
   ZipForge,
-  System.Actions;
+  System.Actions, System.ImageList;
 
 type
   TfrmMain = class(TForm)
@@ -5598,6 +5597,7 @@ begin
     begin
       tvAuthors.Selected[Node] := True;
       tvAuthors.FocusedNode := Node;
+      tvAuthors.TopNode := Node;
       tvAuthorsChange(tvAuthors, Node);
       Exit;
     end;
@@ -5621,6 +5621,7 @@ begin
     begin
       tvSeries.Selected[Node] := True;
       tvSeries.FocusedNode := Node;
+      tvSeries.TopNode := Node;
       tvSeriesChange(tvSeries, Node);
       Exit;
     end;
@@ -5659,6 +5660,7 @@ begin
     begin
       Tree.Selected[Node] := True;
       Tree.FocusedNode := Node;
+      Tree.TopNode     := Node;
 
       if not MoveForward then
         FFirstFoundBook := Node;
@@ -6010,12 +6012,12 @@ end;
 
 procedure TfrmMain.GoForumExecute(Sender: TObject);
 begin
-  SimpleShellExecute(Handle, 'http://forum.home-lib.net/');
+  SimpleShellExecute(Handle, 'https://github.com/OleksiyPenkov/myhomelib/');
 end;
 
 procedure TfrmMain.GoSiteExecute(Sender: TObject);
 begin
-  SimpleShellExecute(Handle, 'http://home-lib.net/');
+  SimpleShellExecute(Handle, 'https://github.com/OleksiyPenkov/myhomelib/');
 end;
 
 procedure TfrmMain.miGoToAuthorClick(Sender: TObject);
@@ -6849,7 +6851,7 @@ begin
   begin
     Data := tvDownloadList.GetNodeData(List[i]);
     if Data.State <> dsRun then
-      tvDownloadList.DeleteNode(List[i], True);
+      tvDownloadList.DeleteNode(List[i]);
   end;
 end;
 
