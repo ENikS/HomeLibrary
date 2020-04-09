@@ -2,4 +2,4 @@
 
 MyHomeLib — компьютерная программа для управления домашней библиотекой электронных книг. MyHomeLib может использоваться не только для каталогизации коллекции файлов с электронными книгами, но и как клиент для работы с библиотекой Либрусек и другими библиотеками на движке Либрусек (Флибуста и другими подобными).
 
-This is an archival copy of the repo with all history intact
+This is an archival copy imported from https://app.assembla.com/spaces/myhomelib/subversion/source
