@@ -1,8 +1,8 @@
-(* *****************************************************************************
+п»ї(* *****************************************************************************
   *
   * MyHomeLib
   *
-  * Copyright (C) 2008-2010 Aleksey Penkov
+  * Copyright (C) 2008-2019 Oleksiy Penkov (aka Koreec)
   *
   * Authors Aleksey Penkov   alex.penkov@gmail.com
   *         Nick Rymanov     nrymanov@gmail.com
@@ -71,7 +71,7 @@ begin
     DataVersion := IntToStr(vVersion);
 
   //
-  // Заполним данные
+  // Р—Р°РїРѕР»РЅРёРј РґР°РЅРЅС‹Рµ
   //
   lvInfo.Items[0].SubItems[0] := Collection.GetProperty(PROP_DISPLAYNAME);
   lvInfo.Items[1].SubItems[0] := DateToStr(Collection.GetProperty(PROP_CREATIONDATE));

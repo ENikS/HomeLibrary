@@ -1,8 +1,8 @@
-(* *****************************************************************************
+п»ї(* *****************************************************************************
   *
   * MyHomeLib
   *
-  * Copyright (C) 2008-2010 Aleksey Penkov
+  * Copyright (C) 2008-2019 Oleksiy Penkov (aka Koreec)
   *
   * Authors Aleksey Penkov   alex.penkov@gmail.com
   *         Nick Rymanov     nrymanov@gmail.com
@@ -59,7 +59,7 @@ uses
   unit_Helpers;
 
 resourcestring
-  rstrProvideNameAndPath = 'Укажите название и путь!';
+  rstrProvideNameAndPath = 'вЂќРєР°Р¶РёС‚Рµ РЅР°Р·РІР°РЅРёРµ Рё РїСѓС‚СЊ!';
 
 {$R *.dfm}
 

@@ -1,8 +1,8 @@
-(* *****************************************************************************
+п»ї(* *****************************************************************************
   *
   * MyHomeLib
   *
-  * Copyright (C) 2008-2010 Aleksey Penkov
+  * Copyright (C) 2008-2019 Oleksiy Penkov (aka Koreec)
   *
   * Authors             Nick Rymanov     nrymanov@gmail.com
   * Created             08.11.2010
@@ -65,11 +65,11 @@ implementation
 {$R *.dfm}
 
 resourcestring
-  rstrDlgCaption = 'Удаление коллекции';
-  rstrDeleteRadioCaption = '&Удалить коллекцию';
-  rstrDeleteRadioHint = 'Полностью удалить коллекцию. Книги из коллекции останутся на диске.';
-  rstrUnregisterRadioCaption = '&Отключить коллекцию';
-  rstrUnregisterRadioHint = 'Удалить коллекцию из списка доступных. Вы сможете подключить её заново с помощью Мастера добавления коллекций.';
+  rstrDlgCaption = 'РЈРґР°Р»РµРЅРёРµ РєРѕР»Р»РµРєС†РёРё';
+  rstrDeleteRadioCaption = '&РЈРґР°Р»РёС‚СЊ РєРѕР»Р»РµРєС†РёСЋ';
+  rstrDeleteRadioHint = 'РџРѕР»РЅРѕСЃС‚СЊСЋ СѓРґР°Р»РёС‚СЊ РєРѕР»Р»РµРєС†РёСЋ. РљРЅРёРіРё РёР· РєРѕР»Р»РµРєС†РёРё РѕСЃС‚Р°РЅСѓС‚СЃСЏ РЅР° РґРёСЃРєРµ.';
+  rstrUnregisterRadioCaption = '&РћС‚РєР»СЋС‡РёС‚СЊ РєРѕР»Р»РµРєС†РёСЋ';
+  rstrUnregisterRadioHint = 'РЈРґР°Р»РёС‚СЊ РєРѕР»Р»РµРєС†РёСЋ РёР· СЃРїРёСЃРєР° РґРѕСЃС‚СѓРїРЅС‹С…. Р’С‹ СЃРјРѕР¶РµС‚Рµ РїРѕРґРєР»СЋС‡РёС‚СЊ РµС‘ Р·Р°РЅРѕРІРѕ СЃ РїРѕРјРѕС‰СЊСЋ РњР°СЃС‚РµСЂР° РґРѕР±Р°РІР»РµРЅРёСЏ РєРѕР»Р»РµРєС†РёР№.';
 
 function AskDeleteCollectionAction: TDeleteCollectionAction;
 const

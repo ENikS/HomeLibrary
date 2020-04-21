@@ -1,8 +1,8 @@
-(* *****************************************************************************
+п»ї(* *****************************************************************************
   *
   * MyHomeLib
   *
-  * Copyright (C) 2008-2010 Aleksey Penkov
+  * Copyright (C) 2008-2019 Oleksiy Penkov (aka Koreec)
   *
   * Authors Aleksey Penkov   alex.penkov@gmail.com
   *         Nick Rymanov     nrymanov@gmail.com
@@ -112,8 +112,8 @@ uses
   unit_Consts;
 
 resourcestring
-  rstrProvideAtLeastOneAuthor = 'Укажите минимум одного автора!';
-  rstrProvideBookTitle = 'Укажите название книги!';
+  rstrProvideAtLeastOneAuthor = 'вЂќРєР°Р¶РёС‚Рµ РјРёРЅРёРјСѓРј РѕРґРЅРѕРіРѕ Р°РІС‚РѕСЂР°!';
+  rstrProvideBookTitle = 'вЂќРєР°Р¶РёС‚Рµ РЅР°Р·РІР°РЅРёРµ РєРЅРёРіРё!';
 
 {$R *.dfm}
 

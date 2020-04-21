@@ -1,8 +1,8 @@
-(* *****************************************************************************
+п»ї(* *****************************************************************************
   *
   * MyHomeLib
   *
-  * Copyright (C) 2008-2010 Aleksey Penkov
+  * Copyright (C) 2008-2019 Oleksiy Penkov (aka Koreec)
   *
   * Authors             Aleksey Penkov   alex.penkov@gmail.com
   *                     Nick Rymanov     nrymanov@gmail.com
@@ -79,7 +79,7 @@ end;
 
 procedure TDownloadProgressForm.SetProgressHint(Style: TProgressBarStyle; State: TProgressBarState);
 begin
-  // ничего не делаем
+  // РЅРёС‡РµРіРѕ РЅРµ РґРµР»Р°РµРј
 end;
 
 procedure TDownloadProgressForm.SetComment2(const Current, Total: string);
@@ -94,17 +94,17 @@ end;
 
 procedure TDownloadProgressForm.ShowProgress(Percent: Integer);
 begin
-  // ничего не делаем
+  // РЅРёС‡РµРіРѕ РЅРµ РґРµР»Р°РµРј
 end;
 
 procedure TDownloadProgressForm.SetComment(const Comment: string);
 begin
-  // ничего не делаем
+  // РЅРёС‡РµРіРѕ РЅРµ РґРµР»Р°РµРј
 end;
 
 procedure TDownloadProgressForm.ShowTeletype(const Msg: string; Severity: TTeletypeSeverity);
 begin
-  // ничего не делаем
+  // РЅРёС‡РµРіРѕ РЅРµ РґРµР»Р°РµРј
 end;
 
 procedure TDownloadProgressForm.ShowProgress2(Current, Total: Integer);

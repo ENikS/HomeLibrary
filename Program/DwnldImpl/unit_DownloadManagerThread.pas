@@ -1,8 +1,8 @@
-(* *****************************************************************************
+п»ї(* *****************************************************************************
   *
   * MyHomeLib
   *
-  * Copyright (C) 2008-2010 Aleksey Penkov
+  * Copyright (C) 2008-2019 Oleksiy Penkov (aka Koreec)
   *
   * Authors             Aleksey Penkov   alex.penkov@gmail.com
   *                     Nick Rymanov     nrymanov@gmail.com
@@ -77,11 +77,11 @@ uses
   IdMultipartFormData;
 
 resourcestring
-  rstrDone = 'Готово';
-  rstrConnecting = 'Подключение ...';
-  rstrConnectingWithInfo = '%s %s %s Подключение ...';
-  rstrDownloading = '%s. %s %s Загрузка: %s Kb/s    %d %%';
-  rstrIgnoreDownloadErrors = 'Игнорировать ошибки загрузки ?';
+  rstrDone = 'Р“РѕС‚РѕРІРѕ';
+  rstrConnecting = 'РџРѕРґРєР»СЋС‡РµРЅРёРµ ...';
+  rstrConnectingWithInfo = '%s %s %s РџРѕРґРєР»СЋС‡РµРЅРёРµ ...';
+  rstrDownloading = '%s. %s %s Р—Р°РіСЂСѓР·РєР°: %s Kb/s    %d %%';
+  rstrIgnoreDownloadErrors = 'РРіРЅРѕСЂРёСЂРѕРІР°С‚СЊ РѕС€РёР±РєРё Р·Р°РіСЂСѓР·РєРё ?';
 
 procedure TDownloadManagerThread.TerminateNow;
 begin
@@ -89,7 +89,7 @@ begin
     FDownloader.Stop;
     Terminate;
   except
-    // подавляем ETreminate
+    // РїРѕРґР°РІР»СЏРµРј ETreminate
   end;
 end;
 

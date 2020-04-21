@@ -237,7 +237,7 @@ object frmMain: TfrmMain
     Width = 786
     Height = 685
     HelpContext = 1
-    ActivePage = tsSearch
+    ActivePage = tsBySerie
     Align = alClient
     OwnerDraw = True
     TabOrder = 2
@@ -246,6 +246,10 @@ object frmMain: TfrmMain
     object tsByAuthor: TTabSheet
       HelpContext = 135
       Caption = #1040#1074#1090#1086#1088#1099
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object AuthorsViewSplitter: TMHLSplitter
         Left = 230
         Top = 70
@@ -349,18 +353,13 @@ object frmMain: TfrmMain
           Align = alClient
           ChangeDelay = 250
           Header.AutoSizeIndex = 0
-          Header.Font.Charset = DEFAULT_CHARSET
-          Header.Font.Color = clWindowText
-          Header.Font.Height = -11
-          Header.Font.Name = 'Tahoma'
-          Header.Font.Style = []
           Header.MainColumn = -1
           Header.Options = [hoColumnResize, hoDrag]
           IncrementalSearch = isAll
           PopupMenu = pmAuthor
           TabOrder = 1
           TreeOptions.PaintOptions = [toPopupMode, toShowDropmark, toShowHorzGridLines, toThemeAware, toUseBlendedImages]
-          TreeOptions.SelectionOptions = [toFullRowSelect, toRightClickSelect]
+          TreeOptions.SelectionOptions = [toFullRowSelect, toRightClickSelect, toCenterScrollIntoView]
           OnChange = tvAuthorsChange
           OnKeyDown = tvAuthorsKeyDown
           Columns = <>
@@ -473,7 +472,6 @@ object frmMain: TfrmMain
           Header.Height = 20
           Header.MainColumn = 1
           Header.Options = [hoColumnResize, hoDblClickResize, hoDrag, hoHotTrack, hoOwnerDraw, hoRestrictDrag, hoShowHint, hoShowSortGlyphs, hoVisible, hoFullRepaintOnResize]
-          Header.ParentFont = True
           Header.PopupMenu = pmHeaders
           Header.Style = hsFlatButtons
           HintMode = hmTooltip
@@ -482,6 +480,7 @@ object frmMain: TfrmMain
           PopupMenu = pmMain
           ShowHint = False
           TabOrder = 1
+          TreeOptions.SelectionOptions = [toDisableDrawSelection, toFullRowSelect, toMultiSelect, toRightClickSelect, toSiblingSelectConstraint]
           OnChange = tvBooksTreeChange
           OnDblClick = ReadBookExecute
           OnHeaderClick = tvBooksTreeHeaderClick
@@ -490,44 +489,44 @@ object frmMain: TfrmMain
           Columns = <
             item
               BiDiMode = bdLeftToRight
+              Hint = 
+                'Text is initially centered and has a left-to-right directionalit' +
+                'y.'
               MaxWidth = 1000
               MinWidth = 40
               Options = [coDraggable, coEnabled, coParentColor, coResizable, coShowDropMark, coVisible]
               Position = 0
               Spacing = 10
+              Text = #1053#1072#1079#1074#1072#1085#1080#1077
               Width = 267
-              WideText = #1053#1072#1079#1074#1072#1085#1080#1077
-              WideHint = 
-                'Text is initially centered and has a left-to-right directionalit' +
-                'y.'
             end
             item
               Alignment = taCenter
               BiDiMode = bdLeftToRight
+              Hint = 
+                'Text is initially left aligned and has a left-to-right direction' +
+                'ality.'
               MaxWidth = 80
               MinWidth = 35
               Options = [coDraggable, coEnabled, coParentColor, coResizable, coShowDropMark, coVisible]
               Position = 1
               Spacing = 10
+              Text = #8470
               Width = 40
-              WideText = #8470
-              WideHint = 
-                'Text is initially left aligned and has a left-to-right direction' +
-                'ality.'
             end
             item
               Alignment = taCenter
               BiDiMode = bdRightToLeft
+              Hint = 
+                'Text is initially left aligned and has a right-to-left direction' +
+                'ality.'
               MaxWidth = 200
               MinWidth = 65
               Options = [coDraggable, coEnabled, coParentColor, coResizable, coShowDropMark, coVisible]
               Position = 2
               Spacing = 10
+              Text = #1056#1072#1079#1084#1077#1088
               Width = 65
-              WideText = #1056#1072#1079#1084#1077#1088
-              WideHint = 
-                'Text is initially left aligned and has a right-to-left direction' +
-                'ality.'
             end
             item
               Alignment = taCenter
@@ -536,16 +535,16 @@ object frmMain: TfrmMain
               MinWidth = 60
               Options = [coDraggable, coEnabled, coParentColor, coResizable, coShowDropMark, coVisible]
               Position = 3
+              Text = #1056#1077#1081#1090#1080#1085#1075
               Width = 60
-              WideText = #1056#1077#1081#1090#1080#1085#1075
             end
             item
               BiDiMode = bdLeftToRight
               MinWidth = 40
               Options = [coDraggable, coEnabled, coParentColor, coResizable, coShowDropMark, coVisible]
               Position = 4
+              Text = #1046#1072#1085#1088
               Width = 205
-              WideText = #1046#1072#1085#1088
             end>
         end
       end
@@ -609,11 +608,6 @@ object frmMain: TfrmMain
           Align = alClient
           ChangeDelay = 250
           Header.AutoSizeIndex = 0
-          Header.Font.Charset = DEFAULT_CHARSET
-          Header.Font.Color = clWindowText
-          Header.Font.Height = -11
-          Header.Font.Name = 'Tahoma'
-          Header.Font.Style = []
           Header.MainColumn = -1
           Header.Options = [hoColumnResize, hoDrag]
           IncrementalSearch = isAll
@@ -808,7 +802,6 @@ object frmMain: TfrmMain
           Header.AutoSizeIndex = 0
           Header.Height = 20
           Header.Options = [hoColumnResize, hoDrag, hoHotTrack, hoOwnerDraw, hoRestrictDrag, hoShowHint, hoShowImages, hoShowSortGlyphs, hoVisible]
-          Header.ParentFont = True
           Header.PopupMenu = pmHeaders
           Header.Style = hsFlatButtons
           HintMode = hmTooltip
@@ -826,45 +819,45 @@ object frmMain: TfrmMain
               MinWidth = 30
               Options = [coAllowClick, coDraggable, coEnabled, coParentBidiMode, coParentColor, coResizable, coShowDropMark, coVisible, coAutoSpring]
               Position = 0
+              Text = #1040#1074#1090#1086#1088
               Width = 131
-              WideText = #1040#1074#1090#1086#1088
             end
             item
+              Hint = 
+                'Text is initially centered and has a left-to-right directionalit' +
+                'y.'
               MinWidth = 30
               Options = [coAllowClick, coDraggable, coEnabled, coParentBidiMode, coParentColor, coResizable, coShowDropMark, coVisible, coAutoSpring]
               Position = 1
               Spacing = 10
+              Text = #1053#1072#1079#1074#1072#1085#1080#1077
               Width = 181
-              WideText = #1053#1072#1079#1074#1072#1085#1080#1077
-              WideHint = 
-                'Text is initially centered and has a left-to-right directionalit' +
-                'y.'
             end
             item
               Alignment = taCenter
+              Hint = 
+                'Text is initially left aligned and has a left-to-right direction' +
+                'ality.'
               MaxWidth = 90
               MinWidth = 30
               Options = [coAllowClick, coDraggable, coEnabled, coParentBidiMode, coParentColor, coResizable, coShowDropMark, coVisible, coAutoSpring]
               Position = 2
               Spacing = 10
+              Text = #8470
               Width = 30
-              WideText = #8470
-              WideHint = 
-                'Text is initially left aligned and has a left-to-right direction' +
-                'ality.'
             end
             item
               Alignment = taCenter
+              Hint = 
+                'Text is initially left aligned and has a right-to-left direction' +
+                'ality.'
               MaxWidth = 100
               MinWidth = 65
               Options = [coAllowClick, coDraggable, coEnabled, coParentBidiMode, coParentColor, coResizable, coShowDropMark, coVisible, coAutoSpring]
               Position = 3
               Spacing = 10
+              Text = #1056#1072#1079#1084#1077#1088
               Width = 65
-              WideText = #1056#1072#1079#1084#1077#1088
-              WideHint = 
-                'Text is initially left aligned and has a right-to-left direction' +
-                'ality.'
             end
             item
               Alignment = taCenter
@@ -872,19 +865,19 @@ object frmMain: TfrmMain
               MinWidth = 65
               Options = [coAllowClick, coDraggable, coEnabled, coParentBidiMode, coParentColor, coResizable, coShowDropMark, coVisible, coAutoSpring]
               Position = 4
+              Text = #1056#1077#1081#1090#1080#1085#1075
               Width = 65
-              WideText = #1056#1077#1081#1090#1080#1085#1075
             end
             item
               Position = 5
+              Text = #1046#1072#1085#1088
               Width = 120
-              WideText = #1046#1072#1085#1088
             end
             item
               Options = [coAllowClick, coDraggable, coEnabled, coParentBidiMode, coParentColor, coResizable, coShowDropMark, coVisible, coAutoSpring, coAllowFocus]
               Position = 6
+              Text = #1044#1086#1073#1072#1074#1083#1077#1085#1086
               Width = 56
-              WideText = #1044#1086#1073#1072#1074#1083#1077#1085#1086
             end>
         end
       end
@@ -918,6 +911,10 @@ object frmMain: TfrmMain
     object tsByGenre: TTabSheet
       HelpContext = 135
       Caption = #1046#1072#1085#1088#1099
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object GenresViewSplitter: TMHLSplitter
         Left = 230
         Top = 0
@@ -944,11 +941,6 @@ object frmMain: TfrmMain
           Align = alClient
           ChangeDelay = 250
           Header.AutoSizeIndex = 0
-          Header.Font.Charset = DEFAULT_CHARSET
-          Header.Font.Color = clWindowText
-          Header.Font.Height = -11
-          Header.Font.Name = 'Tahoma'
-          Header.Font.Style = []
           Header.MainColumn = -1
           Header.Options = [hoColumnResize, hoDrag]
           IncrementalSearch = isAll
@@ -1067,7 +1059,6 @@ object frmMain: TfrmMain
           Header.AutoSizeIndex = 0
           Header.Height = 20
           Header.Options = [hoColumnResize, hoDblClickResize, hoDrag, hoHotTrack, hoOwnerDraw, hoRestrictDrag, hoShowHint, hoShowSortGlyphs, hoVisible, hoFullRepaintOnResize]
-          Header.ParentFont = True
           Header.PopupMenu = pmHeaders
           Header.Style = hsFlatButtons
           HintMode = hmTooltip
@@ -1083,43 +1074,43 @@ object frmMain: TfrmMain
           Columns = <
             item
               BiDiMode = bdLeftToRight
+              Hint = 
+                'Text is initially centered and has a left-to-right directionalit' +
+                'y.'
               MinWidth = 30
               Options = [coAllowClick, coDraggable, coEnabled, coParentColor, coResizable, coShowDropMark, coVisible, coAutoSpring]
               Position = 0
               Spacing = 10
+              Text = #1040#1074#1090#1086#1088'/'#1057#1077#1088#1080#1103'/'#1053#1072#1079#1074#1072#1085#1080#1077
               Width = 244
-              WideText = #1040#1074#1090#1086#1088'/'#1057#1077#1088#1080#1103'/'#1053#1072#1079#1074#1072#1085#1080#1077
-              WideHint = 
-                'Text is initially centered and has a left-to-right directionalit' +
-                'y.'
             end
             item
               Alignment = taCenter
               BiDiMode = bdLeftToRight
+              Hint = 
+                'Text is initially left aligned and has a left-to-right direction' +
+                'ality.'
               MaxWidth = 90
               MinWidth = 30
               Options = [coAllowClick, coDraggable, coEnabled, coParentColor, coShowDropMark, coVisible, coAutoSpring]
               Position = 1
               Spacing = 10
+              Text = #8470
               Width = 30
-              WideText = #8470
-              WideHint = 
-                'Text is initially left aligned and has a left-to-right direction' +
-                'ality.'
             end
             item
               Alignment = taCenter
               BiDiMode = bdRightToLeft
+              Hint = 
+                'Text is initially left aligned and has a right-to-left direction' +
+                'ality.'
               MaxWidth = 100
               MinWidth = 65
               Options = [coAllowClick, coDraggable, coEnabled, coParentColor, coResizable, coShowDropMark, coVisible, coAutoSpring]
               Position = 2
               Spacing = 10
+              Text = #1056#1072#1079#1084#1077#1088
               Width = 65
-              WideText = #1056#1072#1079#1084#1077#1088
-              WideHint = 
-                'Text is initially left aligned and has a right-to-left direction' +
-                'ality.'
             end
             item
               Alignment = taCenter
@@ -1128,8 +1119,8 @@ object frmMain: TfrmMain
               MinWidth = 65
               Options = [coAllowClick, coDraggable, coEnabled, coParentColor, coResizable, coShowDropMark, coVisible, coAutoSpring]
               Position = 3
+              Text = #1056#1077#1081#1090#1080#1085#1075
               Width = 65
-              WideText = #1056#1077#1081#1090#1080#1085#1075
             end
             item
               BiDiMode = bdLeftToRight
@@ -1143,6 +1134,10 @@ object frmMain: TfrmMain
     object tsSearch: TTabSheet
       HelpContext = 126
       Caption = #1055#1086#1080#1089#1082
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object SearchViewSplitter: TMHLSplitter
         Left = 230
         Top = 0
@@ -1205,7 +1200,7 @@ object frmMain: TfrmMain
             Left = 432
             Top = 0
             Width = 107
-            Height = 26
+            Height = 13
             Align = alRight
             Alignment = taRightJustify
             Caption = '('#1082#1086#1083#1080#1095#1077#1089#1090#1074#1086' '#1082#1085#1080#1075')'
@@ -1216,7 +1211,6 @@ object frmMain: TfrmMain
             Font.Style = [fsBold]
             ParentFont = False
             Layout = tlCenter
-            ExplicitHeight = 13
           end
           object cbPresetName: TComboBox
             Left = 42
@@ -1255,7 +1249,6 @@ object frmMain: TfrmMain
           Header.AutoSizeIndex = 0
           Header.Height = 20
           Header.Options = [hoColumnResize, hoDblClickResize, hoDrag, hoHotTrack, hoOwnerDraw, hoRestrictDrag, hoShowHint, hoShowSortGlyphs, hoVisible, hoFullRepaintOnResize]
-          Header.ParentFont = True
           Header.PopupMenu = pmHeaders
           Header.Style = hsFlatButtons
           HintMode = hmTooltip
@@ -1273,69 +1266,69 @@ object frmMain: TfrmMain
               MaxWidth = 1000
               MinWidth = 30
               Position = 0
+              Text = #1040#1074#1090#1086#1088
               Width = 200
-              WideText = #1040#1074#1090#1086#1088
             end
             item
+              Hint = 
+                'Text is initially centered and has a left-to-right directionalit' +
+                'y.'
               MaxWidth = 1000
               MinWidth = 30
               Position = 1
               Spacing = 10
+              Text = #1053#1072#1079#1074#1072#1085#1080#1077
               Width = 200
-              WideText = #1053#1072#1079#1074#1072#1085#1080#1077
-              WideHint = 
-                'Text is initially centered and has a left-to-right directionalit' +
-                'y.'
             end
             item
               MaxWidth = 1000
               MinWidth = 30
               Position = 2
+              Text = #1057#1077#1088#1080#1103
               Width = 200
-              WideText = #1057#1077#1088#1080#1103
             end
             item
               Alignment = taCenter
+              Hint = 
+                'Text is initially left aligned and has a left-to-right direction' +
+                'ality.'
               MaxWidth = 60
               MinWidth = 30
               Position = 3
               Spacing = 10
+              Text = #8470
               Width = 45
-              WideText = #8470
-              WideHint = 
-                'Text is initially left aligned and has a left-to-right direction' +
-                'ality.'
             end
             item
               Alignment = taCenter
+              Hint = 
+                'Text is initially left aligned and has a right-to-left direction' +
+                'ality.'
               MaxWidth = 100
               MinWidth = 65
               Position = 4
               Spacing = 10
+              Text = #1056#1072#1079#1084#1077#1088
               Width = 65
-              WideText = #1056#1072#1079#1084#1077#1088
-              WideHint = 
-                'Text is initially left aligned and has a right-to-left direction' +
-                'ality.'
             end
             item
               Alignment = taCenter
               MaxWidth = 60
               MinWidth = 60
               Position = 5
+              Text = #1056#1077#1081#1090#1080#1085#1075
               Width = 60
-              WideText = #1056#1077#1081#1090#1080#1085#1075
             end
             item
               MinWidth = 30
               Position = 6
+              Text = #1046#1072#1085#1088
               Width = 205
-              WideText = #1046#1072#1085#1088
             end
             item
               Position = 7
+              Text = #1044#1086#1073#1072#1074#1083#1077#1085#1086
               Width = 80
-              WideText = #1044#1086#1073#1072#1074#1083#1077#1085#1086
             end>
         end
       end
@@ -1352,7 +1345,6 @@ object frmMain: TfrmMain
           Top = 3
           Width = 224
           Height = 613
-          VertScrollBar.Position = 80
           VertScrollBar.Tracking = True
           Align = alClient
           HeaderFont.Charset = DEFAULT_CHARSET
@@ -1362,9 +1354,10 @@ object frmMain: TfrmMain
           HeaderFont.Style = []
           TabOrder = 0
           object ctpOther: TCategoryPanel
-            Top = 411
+            Top = 491
             Caption = #1056#1072#1079#1085#1086#1077
             TabOrder = 0
+            ExplicitWidth = 185
             object Label30: TLabel
               Left = 7
               Top = 97
@@ -1509,41 +1502,37 @@ object frmMain: TfrmMain
             end
           end
           object ctpFile: TCategoryPanel
-            Top = 234
+            Top = 314
             Height = 177
             Caption = #1060#1072#1081#1083
             TabOrder = 1
+            ExplicitWidth = 222
             object Label27: TLabel
               AlignWithMargins = True
               Left = 3
               Top = 3
-              Width = 197
+              Width = 19
               Height = 13
               Align = alTop
               Caption = #1048#1084#1103
-              ExplicitWidth = 19
             end
             object Label29: TLabel
               AlignWithMargins = True
               Left = 3
               Top = 95
-              Width = 197
+              Width = 18
               Height = 13
               Align = alTop
               Caption = #1058#1080#1087
-              ExplicitTop = 89
-              ExplicitWidth = 18
             end
             object Label28: TLabel
               AlignWithMargins = True
               Left = 3
               Top = 49
-              Width = 197
+              Width = 72
               Height = 13
               Align = alTop
               Caption = #1055#1072#1087#1082#1072' ('#1072#1088#1093#1080#1074')'
-              ExplicitTop = 46
-              ExplicitWidth = 72
             end
             object edFFile: TMHLButtonedEdit
               AlignWithMargins = True
@@ -1580,75 +1569,65 @@ object frmMain: TfrmMain
             end
           end
           object ctpBook: TCategoryPanel
-            Top = -80
+            Top = 0
             Height = 314
             Caption = #1050#1085#1080#1075#1072
             TabOrder = 2
+            ExplicitWidth = 222
             object Label5: TLabel
               AlignWithMargins = True
               Left = 3
               Top = 3
-              Width = 197
+              Width = 31
               Height = 13
               Align = alTop
               Caption = #1040#1074#1090#1086#1088
-              ExplicitWidth = 31
             end
             object Label24: TLabel
               AlignWithMargins = True
               Left = 3
               Top = 49
-              Width = 197
+              Width = 48
               Height = 13
               Align = alTop
               Caption = #1053#1072#1079#1074#1072#1085#1080#1077
-              ExplicitTop = 46
-              ExplicitWidth = 48
             end
             object Label26: TLabel
               AlignWithMargins = True
               Left = 3
               Top = 141
-              Width = 197
+              Width = 28
               Height = 13
               Align = alTop
               Caption = #1046#1072#1085#1088
-              ExplicitTop = 132
-              ExplicitWidth = 28
             end
             object Label6: TLabel
               AlignWithMargins = True
               Left = 3
               Top = 95
-              Width = 197
+              Width = 31
               Height = 13
               Align = alTop
               Caption = #1057#1077#1088#1080#1103
-              ExplicitTop = 89
-              ExplicitWidth = 31
             end
             object Label7: TLabel
               AlignWithMargins = True
               Left = 3
               Top = 238
-              Width = 197
+              Width = 55
               Height = 13
               Align = alBottom
               Caption = #1040#1085#1085#1086#1090#1072#1094#1080#1103
-              ExplicitTop = 241
-              ExplicitWidth = 55
             end
             object Label3: TLabel
               AlignWithMargins = True
               Left = 3
               Top = 191
-              Width = 197
+              Width = 86
               Height = 13
               Margins.Top = 0
               Align = alTop
               Caption = #1050#1083#1102#1095#1077#1074#1099#1077' '#1089#1083#1086#1074#1072
-              ExplicitTop = 179
-              ExplicitWidth = 86
             end
             object edFFullName: TMHLButtonedEdit
               AlignWithMargins = True
@@ -1756,6 +1735,10 @@ object frmMain: TfrmMain
     object tsByGroup: TTabSheet
       HelpContext = 125
       Caption = #1043#1088#1091#1087#1087#1099
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object GroupsViewSplitter: TMHLSplitter
         Left = 230
         Top = 0
@@ -1782,11 +1765,6 @@ object frmMain: TfrmMain
           Align = alClient
           ChangeDelay = 250
           Header.AutoSizeIndex = 0
-          Header.Font.Charset = DEFAULT_CHARSET
-          Header.Font.Color = clWindowText
-          Header.Font.Height = -11
-          Header.Font.Name = 'Tahoma'
-          Header.Font.Style = []
           Header.MainColumn = -1
           Header.Options = [hoColumnResize, hoDrag]
           PopupMenu = pmGroupActions
@@ -1965,7 +1943,6 @@ object frmMain: TfrmMain
           Header.AutoSizeIndex = 0
           Header.Height = 20
           Header.Options = [hoColumnResize, hoDblClickResize, hoDrag, hoHotTrack, hoOwnerDraw, hoRestrictDrag, hoShowHint, hoShowSortGlyphs, hoVisible, hoFullRepaintOnResize]
-          Header.ParentFont = True
           Header.PopupMenu = pmHeaders
           Header.Style = hsFlatButtons
           HintMode = hmTooltip
@@ -1981,41 +1958,41 @@ object frmMain: TfrmMain
           Columns = <
             item
               BiDiMode = bdLeftToRight
+              Hint = 
+                'Text is initially centered and has a left-to-right directionalit' +
+                'y.'
               Options = [coAllowClick, coDraggable, coEnabled, coParentColor, coResizable, coShowDropMark, coVisible]
               Position = 0
               Spacing = 10
+              Text = #1053#1072#1079#1074#1072#1085#1080#1077
               Width = 305
-              WideText = #1053#1072#1079#1074#1072#1085#1080#1077
-              WideHint = 
-                'Text is initially centered and has a left-to-right directionalit' +
-                'y.'
             end
             item
               Alignment = taCenter
               BiDiMode = bdLeftToRight
+              Hint = 
+                'Text is initially left aligned and has a left-to-right direction' +
+                'ality.'
               MaxWidth = 90
               MinWidth = 35
               Options = [coAllowClick, coDraggable, coEnabled, coParentColor, coResizable, coShowDropMark, coVisible, coAutoSpring]
               Position = 1
               Spacing = 10
+              Text = #8470
               Width = 38
-              WideText = #8470
-              WideHint = 
-                'Text is initially left aligned and has a left-to-right direction' +
-                'ality.'
             end
             item
               Alignment = taCenter
               BiDiMode = bdRightToLeft
+              Hint = 
+                'Text is initially left aligned and has a right-to-left direction' +
+                'ality.'
               MinWidth = 65
               Options = [coAllowClick, coDraggable, coEnabled, coParentColor, coResizable, coShowDropMark, coVisible]
               Position = 2
               Spacing = 10
+              Text = #1056#1072#1079#1084#1077#1088
               Width = 65
-              WideText = #1056#1072#1079#1084#1077#1088
-              WideHint = 
-                'Text is initially left aligned and has a right-to-left direction' +
-                'ality.'
             end
             item
               Alignment = taCenter
@@ -2024,15 +2001,15 @@ object frmMain: TfrmMain
               MinWidth = 60
               Options = [coAllowClick, coDraggable, coEnabled, coParentColor, coResizable, coShowDropMark, coVisible]
               Position = 3
+              Text = #1056#1077#1081#1090#1080#1085#1075
               Width = 60
-              WideText = #1056#1077#1081#1090#1080#1085#1075
             end
             item
               BiDiMode = bdLeftToRight
               Options = [coAllowClick, coDraggable, coEnabled, coParentColor, coResizable, coShowDropMark, coVisible]
               Position = 4
+              Text = #1050#1086#1083#1083#1077#1082#1094#1080#1103
               Width = 200
-              WideText = #1050#1086#1083#1083#1077#1082#1094#1080#1103
             end>
         end
       end
@@ -2040,6 +2017,10 @@ object frmMain: TfrmMain
     object tsDownload: TTabSheet
       HelpContext = 108
       Caption = #1057#1087#1080#1089#1086#1082' '#1079#1072#1082#1072#1095#1077#1082
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object tlbrDownloadList: TToolBar
         AlignWithMargins = True
         Left = 3
@@ -2185,7 +2166,7 @@ object frmMain: TfrmMain
             Left = 662
             Top = 3
             Width = 107
-            Height = 36
+            Height = 13
             Align = alRight
             Alignment = taRightJustify
             Caption = '('#1082#1086#1083#1080#1095#1077#1089#1090#1074#1086' '#1082#1085#1080#1075')'
@@ -2196,7 +2177,6 @@ object frmMain: TfrmMain
             Font.Style = [fsBold]
             ParentFont = False
             Layout = tlCenter
-            ExplicitHeight = 13
           end
           object pbDownloadProgress: TProgressBar
             Left = 0
@@ -2217,31 +2197,30 @@ object frmMain: TfrmMain
           Header.AutoSizeIndex = 0
           Header.Height = 20
           Header.Options = [hoColumnResize, hoDrag, hoVisible]
-          Header.ParentFont = True
           PopupMenu = pmDownloadList
           TabOrder = 0
           Columns = <
             item
               Position = 0
+              Text = #1040#1074#1090#1086#1088
               Width = 200
-              WideText = #1040#1074#1090#1086#1088
             end
             item
               Position = 1
+              Text = #1053#1072#1079#1074#1072#1085#1080#1077
               Width = 200
-              WideText = #1053#1072#1079#1074#1072#1085#1080#1077
             end
             item
               Alignment = taRightJustify
               Position = 2
+              Text = #1056#1072#1079#1084#1077#1088
               Width = 100
-              WideText = #1056#1072#1079#1084#1077#1088
             end
             item
               Alignment = taCenter
               Position = 3
+              Text = #1057#1090#1072#1090#1091#1089
               Width = 100
-              WideText = #1057#1090#1072#1090#1091#1089
             end>
         end
       end

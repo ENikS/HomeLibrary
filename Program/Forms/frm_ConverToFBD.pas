@@ -1,8 +1,8 @@
-(* *****************************************************************************
+п»ї(* *****************************************************************************
   *
   * MyHomeLib
   *
-  * Copyright (C) 2008-2010 Aleksey Penkov
+  * Copyright (C) 2008-2019 Oleksiy Penkov (aka Koreec)
   *
   * Authors Aleksey Penkov   alex.penkov@gmail.com
   *         Nick Rymanov     nrymanov@gmail.com
@@ -209,7 +209,7 @@ begin
 
   // Never bfFb2Zip, so it's always a folder:
   //
-  // TODO : POSSIBLE BUG - как насчет смешанных коллекций?
+  // TODO : POSSIBLE BUG - РєР°Рє РЅР°СЃС‡РµС‚ СЃРјРµС€Р°РЅРЅС‹С… РєРѕР»Р»РµРєС†РёР№?
   //
   Folder := FBookRecord.GetBookContainer;
 
@@ -240,7 +240,7 @@ begin
   end;
 
   //
-  // TODO : зачитывать аннотацию и обложку
+  // TODO : Р·Р°С‡РёС‚С‹РІР°С‚СЊ Р°РЅРЅРѕС‚Р°С†РёСЋ Рё РѕР±Р»РѕР¶РєСѓ
   //
 end;
 
